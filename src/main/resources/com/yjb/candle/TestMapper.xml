@@ -5,7 +5,45 @@
 <mapper namespace="com.yjb.mapper.TestMapper">
 
 <select id="read" resultType="com.yjb.mapper.NameVO">
-select * from candle_name where idx = #{idx}
+	SELECT 
+      CT.idx
+      , CT.candle_idx
+      , C.name AS name
+      , A.name	AS aroma
+      , P.name	AS place
+      , S.name	AS season
+      , T.name	AS time
+      , GROUP_CONCAT(CA.candle_add SEPARATOR ',') AS candle_add
+   FROM
+      candle_tag CT
+      , types_of_aroma A
+      , types_of_place P 
+      , types_of_season S
+      , types_of_time T
+      , candle_add CA
+      , candle C
+   WHERE
+   	CT.candle_idx=C.idx
+   AND
+   	CT.aroma=1
+	AND
+		A.idx=1
+	AND
+		CT.place=1
+	AND
+		P.idx=1
+	AND
+		CT.season=1
+	AND
+		S.idx=1
+	AND
+		CT.time=1
+	AND	
+		T.idx=1
+	AND
+		CT.candle_idx=CA.candle_idx
+	GROUP BY 
+		CT.idx
 </select>
 
 </mapper>
