@@ -31,6 +31,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// mybatis와 관련된 dependency (jdbc, mybatis)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
 }
 
 tasks.named('test') {
