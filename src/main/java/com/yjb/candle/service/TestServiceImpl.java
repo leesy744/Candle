@@ -1,10 +1,9 @@
 package com.yjb.candle.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.yjb.candle.domain.NameVO;
+import com.yjb.candle.domain.SearchVO;
 import com.yjb.candle.mapper.TestMapper;
 
 import lombok.Setter;
@@ -17,9 +16,10 @@ public class TestServiceImpl implements TestService {
 	private TestMapper mapper;
 	
 	@Override
-	public NameVO get(long idx) {
-		log.info("get_________________"+idx);
-		return mapper.result(idx);
+	public NameVO get(SearchVO search) {
+		log.info("get_________________"+search);
+		
+		return mapper.result(search);
 	}
 
 }

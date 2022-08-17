@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yjb.mapper.TestMapper">
 
-<select id="read" resultType="com.yjb.mapper.NameVO">
+<select id="result" resultType="com.yjb.mapper.NameVO">
 	SELECT 
       CT.idx
       , CT.candle_idx
@@ -25,21 +25,21 @@
    WHERE
    	CT.candle_idx=C.idx
    AND
-   	CT.aroma=1
+   	CT.aroma=#{search.aroma}
 	AND
-		A.idx=1
+		A.idx=#{search.aroma}
 	AND
-		CT.place=1
+		CT.place=#{search.place}
 	AND
-		P.idx=1
+		P.idx=#{search.place}
 	AND
-		CT.season=1
+		CT.season=#{search.season}
 	AND
-		S.idx=1
+		S.idx=#{search.season}
 	AND
-		CT.time=1
+		CT.time=#{search.time}
 	AND	
-		T.idx=1
+		T.idx=#{search.time}
 	AND
 		CT.candle_idx=CA.candle_idx
 	GROUP BY 

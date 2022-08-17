@@ -1,9 +1,9 @@
 package com.yjb.candle.mapper;
 
-import java.util.List;
 import com.yjb.candle.domain.NameVO;
+import com.yjb.candle.domain.SearchVO;
 
 public interface TestMapper {
 
-	public NameVO result(long idx);
+	public NameVO result(SearchVO search);
 }
