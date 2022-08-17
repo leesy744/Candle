@@ -15,4 +15,5 @@ public class NameVO {
 	private String time;
 	private String season;
 	private List<String> candle_add;
+	private String contents;
 }

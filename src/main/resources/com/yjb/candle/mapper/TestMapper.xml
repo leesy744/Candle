@@ -14,6 +14,7 @@
       , S.name	AS season
       , T.name	AS time
       , GROUP_CONCAT(CA.candle_add SEPARATOR ',') AS candle_add
+	  , C.contents AS contents
    FROM
       candle_tag CT
       , types_of_aroma A
